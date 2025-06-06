@@ -1,0 +1,143 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = ".;user";
+message SendSmsReq {
+  string phone = 1;
+  string source = 2;
+}
+
+message SendSmsResp {
+  int64 code = 1;
+  string msg = 2;
+}
+message RegisterReq {
+  string phone = 1;
+  string password = 2;
+  string smsCode = 3;
+}
+
+message RegisterResp {
+  int64 code = 1;
+  string msg = 2;
+}
+message LoginReq {
+  string phone = 1;
+  string password = 2;
+  string smsCode = 3;
+}
+
+message LoginResp {
+  int64 code = 1;
+  string msg = 2;
+  int64 id = 3;
+}
+
+message VideoWorkAddReq {
+  string title = 1;//标题
+  string describe = 2;//描述
+  int64 music_id = 3;//选择音乐
+  string status = 4;//审核状态
+  string work_cate = 5;//作品类型
+  string reviewer = 6;//审核人
+  string work_permission = 7;//作品权限
+  string address = 8;//地址
+  int64 like_num = 9;//喜欢数量
+  int64 content_num = 10;//评论数
+  int64 share_num = 11;//分享数
+  int64 collect_num = 12;//收藏数
+  int64 browse_num = 13;//浏览量
+}
+
+message VideoWorkAddResp {
+  int64 code = 1;
+  string msg = 2;
+}
+message WorkStatusReq {
+  string work_cate = 1;
+}
+
+message WorkStatusResp {
+  repeated WorkStatus list = 1;
+}
+message WorkStatus{
+  string title = 1;//标题
+  string describe = 2;//描述
+  int64 music_id = 3;//选择音乐
+  string status = 4;//审核状态
+  string work_cate = 5;//作品类型
+  string reviewer = 6;//审核人
+  string work_permission = 7;//作品权限
+  string address = 8;//地址
+  int64 like_num = 9;//喜欢数量
+  int64 content_num = 10;//评论数
+  int64 share_num = 11;//分享数
+  int64 collect_num = 12;//收藏数
+  int64 browse_num = 13;//浏览量
+}
+message UserCenterAddReq {
+  string Name = 1;//名称
+  string NickName = 2;           //昵称
+  string UserCode = 3;          //编号
+  string Signature = 4;         //签名
+  string  Sex = 5;                   //性别
+  string IpAddress = 6;        //ip地址
+  string Constellation = 7;  //星座
+  int64 AttendCount = 8;      //关注数
+  int64 FanCount = 9;            //粉丝数
+  int64 ZanCount = 10;           //点赞数
+  string Status  = 11;             //用户状态
+  int64 ImageId  = 12;            //头像
+  string Info    = 13;                //认证信息
+  string Mobile  = 14;               //手机号
+  string RealNameAuth = 15;    //实名认证状态
+  string Age = 16;                     //年龄
+  string OnlineStatus = 17;    //在线状态
+  string Type = 18;                //认证类型
+  string Level  = 19;               //用户等级
+  string Balance = 20;            //余额
+}
+
+message UserCenterAddResp {
+  int64 code = 1;
+  string msg = 2;
+}
+message UserCenterListReq {
+
+}
+
+message UserCenterListResp {
+  repeated UserCenterList list = 1;
+}
+message UserCenterList{
+  string Name = 1;//名称
+  string NickName = 2;           //昵称
+  string UserCode = 3;          //编号
+  string Signature = 4;         //签名
+  string  Sex = 5;                   //性别
+  string IpAddress = 6;        //ip地址
+  string Constellation = 7;  //星座
+  int64 AttendCount = 8;      //关注数
+  int64 FanCount = 9;            //粉丝数
+  int64 ZanCount = 10;           //点赞数
+  string Status  = 11;             //用户状态
+  int64 ImageId  = 12;            //头像
+  string Info    = 13;                //认证信息
+  string Mobile  = 14;               //手机号
+  string RealNameAuth = 15;    //实名认证状态
+  string Age = 16;                     //年龄
+  string OnlineStatus = 17;    //在线状态
+  string Type = 18;                //认证类型
+  string Level  = 19;               //用户等级
+  string Balance = 20;            //余额
+}
+service User {
+  rpc SendSms(SendSmsReq) returns (SendSmsResp);
+  rpc Register(RegisterReq) returns (RegisterResp);
+  rpc Login(LoginReq) returns (LoginResp);
+  rpc VideoWorkAdd(VideoWorkAddReq) returns (VideoWorkAddResp);
+  rpc WorkStatus(WorkStatusReq) returns (WorkStatusResp);
+  rpc UserCenterAdd(UserCenterAddReq) returns (UserCenterAddResp);
+  rpc UserCenterList(UserCenterListReq) returns (UserCenterListResp);
+}
