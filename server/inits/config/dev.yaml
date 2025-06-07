@@ -1,0 +1,9 @@
+Mysql:
+  Host: 14.103.235.215
+  Port: 3306
+  User: root
+  Pass: 686c75a503764f121f81cc01c8dc04a7
+  DB: short-video
+Redis:
+  Host: 8.155.62.49
+  Port: 6379

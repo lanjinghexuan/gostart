@@ -3,6 +3,27 @@
   <component name="GoORMHelperCache">
     <option name="schemaMapping">
       <map>
+        <entry key="Config">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/inits/config/config.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Mysql">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/inits/config/config.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Redis">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/inits/config/config.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="UnimplementedUserServer">
           <value>
             <set>
@@ -122,14 +143,14 @@
         <entry key="file://$PROJECT_DIR$/server/cmd/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749259462310" />
+              <option name="lastModified" value="1749260502725" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/server/global/global.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749259461955" />
+              <option name="lastModified" value="1749260257493" />
             </ScannedPath>
           </value>
         </entry>
@@ -143,7 +164,28 @@
         <entry key="file://$PROJECT_DIR$/server/inits/config/config.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749259461388" />
+              <option name="lastModified" value="1749260817653" />
+              <option name="schema">
+                <list>
+                  <option value="Config" />
+                  <option value="Mysql" />
+                  <option value="Redis" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/inits/init.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1749260434933" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/inits/init/init.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1749260781115" />
             </ScannedPath>
           </value>
         </entry>
@@ -164,7 +206,7 @@
         <entry key="file://$PROJECT_DIR$/server/inits/mysql/init.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749259460385" />
+              <option name="lastModified" value="1749260831191" />
             </ScannedPath>
           </value>
         </entry>
@@ -218,6 +260,9 @@
     </option>
     <option name="tableStructMapping">
       <map>
+        <entry key="config" value="Config" />
+        <entry key="mysql" value="Mysql" />
+        <entry key="redis" value="Redis" />
         <entry key="unimplemented_user_server" value="UnimplementedUserServer" />
         <entry key="user_client" value="userClient" />
         <entry key="x" value="x" />
