@@ -164,7 +164,7 @@ func UserCenterAdd(c *gin.Context) {
 		Name:          req.Name,
 		NickName:      req.NickName,
 		UserCode:      req.UserCode,
-		Signature:     ,
+		Signature:     "",
 		Sex:           "",
 		IpAddress:     "",
 		Constellation: "",
