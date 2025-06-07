@@ -30,7 +30,7 @@ type Nacos struct {
 var AppConf Nacos
 
 func GetConfig() {
-	viper.SetConfigFile("D:\\goWork\\src\\video\\server\\inits\\config\\dev.yaml")
+	viper.SetConfigFile("../inits/config/dev.yaml")
 	err := viper.ReadInConfig()
 	if err != nil {
 		log.Println("配置文件读取失败")

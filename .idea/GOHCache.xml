@@ -3,9 +3,17 @@
   <component name="GoORMHelperCache">
     <option name="schemaMapping">
       <map>
+        <entry key="AliyunGpt">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/common/config/config.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="Config">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/common/config/config.go" />
               <option value="file://$PROJECT_DIR$/server/inits/config/config.go" />
             </set>
           </value>
@@ -14,6 +22,13 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/api/pkg/jwt.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Elastic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/common/config/config.go" />
             </set>
           </value>
         </entry>
@@ -47,10 +62,24 @@
             </set>
           </value>
         </entry>
+        <entry key="Mysql">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/common/config/config.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="Nacos">
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/server/inits/config/config.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Redis">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/common/config/config.go" />
             </set>
           </value>
         </entry>
@@ -97,6 +126,13 @@
             <set>
               <option value="file://$PROJECT_DIR$/api/proto/user/user.pb.go" />
               <option value="file://$PROJECT_DIR$/server/proto/user/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Server">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/common/config/config.go" />
             </set>
           </value>
         </entry>
@@ -261,7 +297,7 @@
         <entry key="file://$PROJECT_DIR$/api/internal/handler/user.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749215155543" />
+              <option name="lastModified" value="1749258152995" />
             </ScannedPath>
           </value>
         </entry>
@@ -375,6 +411,23 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/common/config/config.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1749192792795" />
+              <option name="schema">
+                <list>
+                  <option value="Config" />
+                  <option value="Server" />
+                  <option value="Elastic" />
+                  <option value="Mysql" />
+                  <option value="Redis" />
+                  <option value="AliyunGpt" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/server/cmd/main.go">
           <value>
             <ScannedPath>
@@ -385,7 +438,7 @@
         <entry key="file://$PROJECT_DIR$/server/global/global.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749215151892" />
+              <option name="lastModified" value="1749258216519" />
             </ScannedPath>
           </value>
         </entry>
@@ -404,7 +457,7 @@
         <entry key="file://$PROJECT_DIR$/server/inits/config/config.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749215150448" />
+              <option name="lastModified" value="1749258375812" />
               <option name="schema">
                 <list>
                   <option value="Config" />
@@ -512,19 +565,24 @@
     </option>
     <option name="tableStructMapping">
       <map>
+        <entry key="aliyun_gpt" value="AliyunGpt" />
         <entry key="config" value="Config" />
         <entry key="custom_claims" value="CustomClaims" />
+        <entry key="elastic" value="Elastic" />
         <entry key="jwt" value="JWT" />
         <entry key="login" value="Login" />
         <entry key="login_req" value="LoginReq" />
         <entry key="login_resp" value="LoginResp" />
+        <entry key="mysql" value="Mysql" />
         <entry key="nacos" value="Nacos" />
+        <entry key="redis" value="Redis" />
         <entry key="register" value="Register" />
         <entry key="register_req" value="RegisterReq" />
         <entry key="register_resp" value="RegisterResp" />
         <entry key="send_sms" value="SendSms" />
         <entry key="send_sms_req" value="SendSmsReq" />
         <entry key="send_sms_resp" value="SendSmsResp" />
+        <entry key="server" value="Server" />
         <entry key="unimplemented_user_server" value="UnimplementedUserServer" />
         <entry key="user" value="User" />
         <entry key="user_center" value="UserCenter" />
