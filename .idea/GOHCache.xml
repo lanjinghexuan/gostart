@@ -10,6 +10,23 @@
             </set>
           </value>
         </entry>
+        <entry key="LoginReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/handler/videoUser.go" />
+              <option value="file://$PROJECT_DIR$/api/proto/videoUser/videoUser.pb.go" />
+              <option value="file://$PROJECT_DIR$/server/proto/videoUser/videoUser.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LoginRes">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/proto/videoUser/videoUser.pb.go" />
+              <option value="file://$PROJECT_DIR$/server/proto/videoUser/videoUser.pb.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="Mysql">
           <value>
             <set>
@@ -24,27 +41,48 @@
             </set>
           </value>
         </entry>
-        <entry key="UnimplementedUserServer">
+        <entry key="SendCodeReq">
           <value>
             <set>
-              <option value="file://$PROJECT_DIR$/api/proto/user/user_grpc.pb.go" />
-              <option value="file://$PROJECT_DIR$/server/proto/user/user_grpc.pb.go" />
+              <option value="file://$PROJECT_DIR$/api/internal/handler/videoUser.go" />
             </set>
           </value>
         </entry>
-        <entry key="userClient">
+        <entry key="UnimplementedVideoUserServer">
           <value>
             <set>
-              <option value="file://$PROJECT_DIR$/api/proto/user/user_grpc.pb.go" />
-              <option value="file://$PROJECT_DIR$/server/proto/user/user_grpc.pb.go" />
+              <option value="file://$PROJECT_DIR$/api/proto/videoUser/videoUser_grpc.pb.go" />
+              <option value="file://$PROJECT_DIR$/server/proto/videoUser/videoUser_grpc.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="VideoUser">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/inits/model/videoUser.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="server">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/handler/videoUser.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="videoUserClient">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/proto/videoUser/videoUser_grpc.pb.go" />
+              <option value="file://$PROJECT_DIR$/server/proto/videoUser/videoUser_grpc.pb.go" />
             </set>
           </value>
         </entry>
         <entry key="x">
           <value>
             <set>
-              <option value="file://$PROJECT_DIR$/api/proto/user/user.pb.go" />
-              <option value="file://$PROJECT_DIR$/server/proto/user/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/api/proto/videoUser/videoUser.pb.go" />
+              <option value="file://$PROJECT_DIR$/server/proto/videoUser/videoUser.pb.go" />
             </set>
           </value>
         </entry>
@@ -55,65 +93,59 @@
         <entry key="file://$PROJECT_DIR$/api/cmd/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749259466608" />
+              <option name="lastModified" value="1749268638208" />
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/api/internal/handler/user.go">
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/videoUser.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749259465840" />
+              <option name="lastModified" value="1749384653791" />
+              <option name="schema">
+                <list>
+                  <option value="LoginReq" />
+                  <option value="SendCodeReq" />
+                </list>
+              </option>
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/api/internal/handler/work.go">
+        <entry key="file://$PROJECT_DIR$/api/internal/server/videoUser.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749259466214" />
-            </ScannedPath>
-          </value>
-        </entry>
-        <entry key="file://$PROJECT_DIR$/api/internal/request/user.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1749259465267" />
-            </ScannedPath>
-          </value>
-        </entry>
-        <entry key="file://$PROJECT_DIR$/api/internal/request/work.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1749259465564" />
+              <option name="lastModified" value="1749263695213" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/api/pkg/jwt.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749259464963" />
+              <option name="lastModified" value="1749384565191" />
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/api/proto/user/user.pb.go">
+        <entry key="file://$PROJECT_DIR$/api/proto/videoUser/videoUser.pb.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749259464033" />
+              <option name="lastModified" value="1749270458861" />
               <option name="schema">
                 <list>
+                  <option value="LoginReq" />
+                  <option value="LoginRes" />
                   <option value="x" />
                 </list>
               </option>
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/api/proto/user/user_grpc.pb.go">
+        <entry key="file://$PROJECT_DIR$/api/proto/videoUser/videoUser_grpc.pb.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749259464637" />
+              <option name="lastModified" value="1749270458865" />
               <option name="schema">
                 <list>
-                  <option value="userClient" />
-                  <option value="UnimplementedUserServer" />
+                  <option value="videoUserClient" />
+                  <option value="UnimplementedVideoUserServer" />
                 </list>
               </option>
             </ScannedPath>
@@ -122,7 +154,7 @@
         <entry key="file://$PROJECT_DIR$/api/router/router.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749259463173" />
+              <option name="lastModified" value="1749268638212" />
             </ScannedPath>
           </value>
         </entry>
@@ -143,28 +175,40 @@
         <entry key="file://$PROJECT_DIR$/server/cmd/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749260502725" />
+              <option name="lastModified" value="1749269768148" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/server/global/global.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749260257493" />
+              <option name="lastModified" value="1749269768149" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/server/handler/user.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749259461658" />
+              <option name="lastModified" value="1749383790968" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/handler/videoUser.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1749384210035" />
+              <option name="schema">
+                <list>
+                  <option value="server" />
+                </list>
+              </option>
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/server/inits/config/config.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749260817653" />
+              <option name="lastModified" value="1749269768149" />
               <option name="schema">
                 <list>
                   <option value="Config" />
@@ -175,24 +219,29 @@
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/server/inits/init.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1749260434933" />
-            </ScannedPath>
-          </value>
-        </entry>
         <entry key="file://$PROJECT_DIR$/server/inits/init/init.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749260781115" />
+              <option name="lastModified" value="1749269768153" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/server/inits/model/user.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749259460793" />
+              <option name="lastModified" value="1749383158108" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/inits/model/videoUser.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1749384674728" />
+              <option name="schema">
+                <list>
+                  <option value="VideoUser" />
+                </list>
+              </option>
             </ScannedPath>
           </value>
         </entry>
@@ -206,7 +255,7 @@
         <entry key="file://$PROJECT_DIR$/server/inits/mysql/init.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749260831191" />
+              <option name="lastModified" value="1749269768154" />
             </ScannedPath>
           </value>
         </entry>
@@ -231,26 +280,28 @@
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/server/proto/user/user.pb.go">
+        <entry key="file://$PROJECT_DIR$/server/proto/videoUser/videoUser.pb.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749259458253" />
+              <option name="lastModified" value="1749270458866" />
               <option name="schema">
                 <list>
+                  <option value="LoginReq" />
+                  <option value="LoginRes" />
                   <option value="x" />
                 </list>
               </option>
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/server/proto/user/user_grpc.pb.go">
+        <entry key="file://$PROJECT_DIR$/server/proto/videoUser/videoUser_grpc.pb.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749259458759" />
+              <option name="lastModified" value="1749270458866" />
               <option name="schema">
                 <list>
-                  <option value="userClient" />
-                  <option value="UnimplementedUserServer" />
+                  <option value="videoUserClient" />
+                  <option value="UnimplementedVideoUserServer" />
                 </list>
               </option>
             </ScannedPath>
@@ -261,13 +312,18 @@
     <option name="tableStructMapping">
       <map>
         <entry key="config" value="Config" />
+        <entry key="login_req" value="LoginReq" />
+        <entry key="login_res" value="LoginRes" />
         <entry key="mysql" value="Mysql" />
         <entry key="redis" value="Redis" />
-        <entry key="unimplemented_user_server" value="UnimplementedUserServer" />
-        <entry key="user_client" value="userClient" />
+        <entry key="send_code_req" value="SendCodeReq" />
+        <entry key="server" value="server" />
+        <entry key="unimplemented_video_user_server" value="UnimplementedVideoUserServer" />
+        <entry key="video_user" value="VideoUser" />
+        <entry key="video_user_client" value="videoUserClient" />
         <entry key="x" value="x" />
       </map>
     </option>
-    <option name="lastTimeChecked" value="1749259546382" />
+    <option name="lastTimeChecked" value="1749382571041" />
   </component>
 </project>

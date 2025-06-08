@@ -8,7 +8,6 @@ service VideoUser {
 
 message LoginReq{
   int64 Mobile = 1;
-  int32 Code = 2;
 }
 
 message LoginRes{

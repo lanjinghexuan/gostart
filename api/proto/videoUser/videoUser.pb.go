@@ -24,7 +24,6 @@ const (
 type LoginReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Mobile        int64                  `protobuf:"varint,1,opt,name=Mobile,proto3" json:"Mobile,omitempty"`
-	Code          int32                  `protobuf:"varint,2,opt,name=Code,proto3" json:"Code,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -66,16 +65,9 @@ func (x *LoginReq) GetMobile() int64 {
 	return 0
 }
 
-func (x *LoginReq) GetCode() int32 {
-	if x != nil {
-		return x.Code
-	}
-	return 0
-}
-
 type LoginRes struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Token         string                 `protobuf:"bytes,1,opt,name=Token,proto3" json:"Token,omitempty"`
+	Id            int32                  `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -110,23 +102,22 @@ func (*LoginRes) Descriptor() ([]byte, []int) {
 	return file_videoUser_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *LoginRes) GetToken() string {
+func (x *LoginRes) GetId() int32 {
 	if x != nil {
-		return x.Token
+		return x.Id
 	}
-	return ""
+	return 0
 }
 
 var File_videoUser_proto protoreflect.FileDescriptor
 
 const file_videoUser_proto_rawDesc = "" +
 	"\n" +
-	"\x0fvideoUser.proto\"6\n" +
+	"\x0fvideoUser.proto\"\"\n" +
 	"\bLoginReq\x12\x16\n" +
-	"\x06Mobile\x18\x01 \x01(\x03R\x06Mobile\x12\x12\n" +
-	"\x04Code\x18\x02 \x01(\x05R\x04Code\" \n" +
-	"\bLoginRes\x12\x14\n" +
-	"\x05Token\x18\x01 \x01(\tR\x05Token2*\n" +
+	"\x06Mobile\x18\x01 \x01(\x03R\x06Mobile\"\x1a\n" +
+	"\bLoginRes\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\x05R\x02Id2*\n" +
 	"\tVideoUser\x12\x1d\n" +
 	"\x05Login\x12\t.LoginReq\x1a\t.LoginResB\x03Z\x01.b\x06proto3"
 

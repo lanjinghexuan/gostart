@@ -24,7 +24,6 @@ const (
 type LoginReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Mobile        int64                  `protobuf:"varint,1,opt,name=Mobile,proto3" json:"Mobile,omitempty"`
-	Code          int32                  `protobuf:"varint,2,opt,name=Code,proto3" json:"Code,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -62,13 +61,6 @@ func (*LoginReq) Descriptor() ([]byte, []int) {
 func (x *LoginReq) GetMobile() int64 {
 	if x != nil {
 		return x.Mobile
-	}
-	return 0
-}
-
-func (x *LoginReq) GetCode() int32 {
-	if x != nil {
-		return x.Code
 	}
 	return 0
 }
@@ -121,10 +113,9 @@ var File_videoUser_proto protoreflect.FileDescriptor
 
 const file_videoUser_proto_rawDesc = "" +
 	"\n" +
-	"\x0fvideoUser.proto\"6\n" +
+	"\x0fvideoUser.proto\"\"\n" +
 	"\bLoginReq\x12\x16\n" +
-	"\x06Mobile\x18\x01 \x01(\x03R\x06Mobile\x12\x12\n" +
-	"\x04Code\x18\x02 \x01(\x05R\x04Code\"\x1a\n" +
+	"\x06Mobile\x18\x01 \x01(\x03R\x06Mobile\"\x1a\n" +
 	"\bLoginRes\x12\x0e\n" +
 	"\x02Id\x18\x01 \x01(\x05R\x02Id2*\n" +
 	"\tVideoUser\x12\x1d\n" +
