@@ -5,11 +5,13 @@ import (
 	"github.com/spf13/viper"
 	"server/global"
 	"server/inits/mysql"
+	"server/inits/redis"
 )
 
 func init() {
 	InitConfig()
 	mysql.InitMysql()
+	redis.InitRedis()
 }
 
 func InitConfig() {
