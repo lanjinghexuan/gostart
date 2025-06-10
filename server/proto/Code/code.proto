@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+
+option go_package = ".;code";
+
+service code {
+  rpc SendCode(SendCodeReq) returns (SendCodeRes);
+}
+
+message SendCodeReq{
+  string Mobile = 1;
+  int32 Code = 2;
+}
+
+message SendCodeRes{
+  bool Success = 1;
+}

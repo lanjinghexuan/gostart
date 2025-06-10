@@ -24,6 +24,7 @@ const (
 type LoginReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Mobile        int64                  `protobuf:"varint,1,opt,name=Mobile,proto3" json:"Mobile,omitempty"`
+	Code          int32                  `protobuf:"varint,2,opt,name=Code,proto3" json:"Code,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -61,6 +62,13 @@ func (*LoginReq) Descriptor() ([]byte, []int) {
 func (x *LoginReq) GetMobile() int64 {
 	if x != nil {
 		return x.Mobile
+	}
+	return 0
+}
+
+func (x *LoginReq) GetCode() int32 {
+	if x != nil {
+		return x.Code
 	}
 	return 0
 }
@@ -109,17 +117,156 @@ func (x *LoginRes) GetId() int32 {
 	return 0
 }
 
+type GetUserInfoReq struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        int32                  `protobuf:"varint,1,opt,name=UserId,proto3" json:"UserId,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetUserInfoReq) Reset() {
+	*x = GetUserInfoReq{}
+	mi := &file_videoUser_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetUserInfoReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUserInfoReq) ProtoMessage() {}
+
+func (x *GetUserInfoReq) ProtoReflect() protoreflect.Message {
+	mi := &file_videoUser_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUserInfoReq.ProtoReflect.Descriptor instead.
+func (*GetUserInfoReq) Descriptor() ([]byte, []int) {
+	return file_videoUser_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *GetUserInfoReq) GetUserId() int32 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+type GetUserInfoRes struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Avator        string                 `protobuf:"bytes,1,opt,name=Avator,proto3" json:"Avator,omitempty"`
+	NickName      string                 `protobuf:"bytes,2,opt,name=NickName,proto3" json:"NickName,omitempty"`
+	Id            int32                  `protobuf:"varint,3,opt,name=Id,proto3" json:"Id,omitempty"`
+	Signature     string                 `protobuf:"bytes,4,opt,name=Signature,proto3" json:"Signature,omitempty"`
+	Constellation string                 `protobuf:"bytes,5,opt,name=Constellation,proto3" json:"Constellation,omitempty"`
+	IpAddress     string                 `protobuf:"bytes,6,opt,name=IpAddress,proto3" json:"IpAddress,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetUserInfoRes) Reset() {
+	*x = GetUserInfoRes{}
+	mi := &file_videoUser_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetUserInfoRes) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUserInfoRes) ProtoMessage() {}
+
+func (x *GetUserInfoRes) ProtoReflect() protoreflect.Message {
+	mi := &file_videoUser_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUserInfoRes.ProtoReflect.Descriptor instead.
+func (*GetUserInfoRes) Descriptor() ([]byte, []int) {
+	return file_videoUser_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *GetUserInfoRes) GetAvator() string {
+	if x != nil {
+		return x.Avator
+	}
+	return ""
+}
+
+func (x *GetUserInfoRes) GetNickName() string {
+	if x != nil {
+		return x.NickName
+	}
+	return ""
+}
+
+func (x *GetUserInfoRes) GetId() int32 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *GetUserInfoRes) GetSignature() string {
+	if x != nil {
+		return x.Signature
+	}
+	return ""
+}
+
+func (x *GetUserInfoRes) GetConstellation() string {
+	if x != nil {
+		return x.Constellation
+	}
+	return ""
+}
+
+func (x *GetUserInfoRes) GetIpAddress() string {
+	if x != nil {
+		return x.IpAddress
+	}
+	return ""
+}
+
 var File_videoUser_proto protoreflect.FileDescriptor
 
 const file_videoUser_proto_rawDesc = "" +
 	"\n" +
-	"\x0fvideoUser.proto\"\"\n" +
+	"\x0fvideoUser.proto\"6\n" +
 	"\bLoginReq\x12\x16\n" +
-	"\x06Mobile\x18\x01 \x01(\x03R\x06Mobile\"\x1a\n" +
+	"\x06Mobile\x18\x01 \x01(\x03R\x06Mobile\x12\x12\n" +
+	"\x04Code\x18\x02 \x01(\x05R\x04Code\"\x1a\n" +
 	"\bLoginRes\x12\x0e\n" +
-	"\x02Id\x18\x01 \x01(\x05R\x02Id2*\n" +
+	"\x02Id\x18\x01 \x01(\x05R\x02Id\"(\n" +
+	"\x0eGetUserInfoReq\x12\x16\n" +
+	"\x06UserId\x18\x01 \x01(\x05R\x06UserId\"\xb6\x01\n" +
+	"\x0eGetUserInfoRes\x12\x16\n" +
+	"\x06Avator\x18\x01 \x01(\tR\x06Avator\x12\x1a\n" +
+	"\bNickName\x18\x02 \x01(\tR\bNickName\x12\x0e\n" +
+	"\x02Id\x18\x03 \x01(\x05R\x02Id\x12\x1c\n" +
+	"\tSignature\x18\x04 \x01(\tR\tSignature\x12$\n" +
+	"\rConstellation\x18\x05 \x01(\tR\rConstellation\x12\x1c\n" +
+	"\tIpAddress\x18\x06 \x01(\tR\tIpAddress2[\n" +
 	"\tVideoUser\x12\x1d\n" +
-	"\x05Login\x12\t.LoginReq\x1a\t.LoginResB\x03Z\x01.b\x06proto3"
+	"\x05Login\x12\t.LoginReq\x1a\t.LoginRes\x12/\n" +
+	"\vGetUserInfo\x12\x0f.GetUserInfoReq\x1a\x0f.GetUserInfoResB\x03Z\x01.b\x06proto3"
 
 var (
 	file_videoUser_proto_rawDescOnce sync.Once
@@ -133,16 +280,20 @@ func file_videoUser_proto_rawDescGZIP() []byte {
 	return file_videoUser_proto_rawDescData
 }
 
-var file_videoUser_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_videoUser_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_videoUser_proto_goTypes = []any{
-	(*LoginReq)(nil), // 0: LoginReq
-	(*LoginRes)(nil), // 1: LoginRes
+	(*LoginReq)(nil),       // 0: LoginReq
+	(*LoginRes)(nil),       // 1: LoginRes
+	(*GetUserInfoReq)(nil), // 2: GetUserInfoReq
+	(*GetUserInfoRes)(nil), // 3: GetUserInfoRes
 }
 var file_videoUser_proto_depIdxs = []int32{
 	0, // 0: VideoUser.Login:input_type -> LoginReq
-	1, // 1: VideoUser.Login:output_type -> LoginRes
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
+	2, // 1: VideoUser.GetUserInfo:input_type -> GetUserInfoReq
+	1, // 2: VideoUser.Login:output_type -> LoginRes
+	3, // 3: VideoUser.GetUserInfo:output_type -> GetUserInfoRes
+	2, // [2:4] is the sub-list for method output_type
+	0, // [0:2] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -159,7 +310,7 @@ func file_videoUser_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_videoUser_proto_rawDesc), len(file_videoUser_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

@@ -4,13 +4,14 @@ import (
 	"api/internal/server"
 	"api/pkg"
 	pb "api/proto/videoUser"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
 
 type LoginReq struct {
-	Mobile int64  `json:"mobile" form:"mobile" binding:"required"`
-	Code   string `json:"code" form:"code" binding:"required"`
+	Mobile int64 `json:"mobile" form:"mobile" binding:"required"`
+	Code   int32 `json:"code" form:"code" binding:"required"`
 }
 
 func Login(c *gin.Context) {
@@ -22,8 +23,9 @@ func Login(c *gin.Context) {
 
 	userId, err := server.Login(c, &pb.LoginReq{
 		Mobile: req.Mobile,
+		Code:   req.Code,
 	})
-
+	fmt.Println(err)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
@@ -47,10 +49,30 @@ func Login(c *gin.Context) {
 	return
 }
 
-type SendCodeReq struct {
-	Mobile int64 `json:"mobile" form:"mobile" binding:"required"`
-}
+//type GetUserInfoReq struct {
+//	UserId int32 `json:"userId" form:"userId" binding:"required"`
+//}
 
-func SendCode(c *gin.Context) {
+func GetUserInfo(c *gin.Context) {
+	userId := c.MustGet("userId")
+	fmt.Println(userId)
+	//var req GetUserInfoReq
+	//if err := c.ShouldBind(&req); err != nil {
+	//	c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+	//	return
+	//}
 
+	data, err := server.GetUserInfo(c, &pb.GetUserInfoReq{
+		//UserId: req.UserId,
+		UserId: userId.(int32),
+	})
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"data": data,
+		"code": 200,
+	})
+	return
 }

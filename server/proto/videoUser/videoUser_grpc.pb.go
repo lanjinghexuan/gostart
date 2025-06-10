@@ -19,7 +19,8 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	VideoUser_Login_FullMethodName = "/VideoUser/Login"
+	VideoUser_Login_FullMethodName       = "/VideoUser/Login"
+	VideoUser_GetUserInfo_FullMethodName = "/VideoUser/GetUserInfo"
 )
 
 // VideoUserClient is the client API for VideoUser service.
@@ -27,6 +28,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type VideoUserClient interface {
 	Login(ctx context.Context, in *LoginReq, opts ...grpc.CallOption) (*LoginRes, error)
+	GetUserInfo(ctx context.Context, in *GetUserInfoReq, opts ...grpc.CallOption) (*GetUserInfoRes, error)
 }
 
 type videoUserClient struct {
@@ -47,11 +49,22 @@ func (c *videoUserClient) Login(ctx context.Context, in *LoginReq, opts ...grpc.
 	return out, nil
 }
 
+func (c *videoUserClient) GetUserInfo(ctx context.Context, in *GetUserInfoReq, opts ...grpc.CallOption) (*GetUserInfoRes, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetUserInfoRes)
+	err := c.cc.Invoke(ctx, VideoUser_GetUserInfo_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VideoUserServer is the server API for VideoUser service.
 // All implementations must embed UnimplementedVideoUserServer
 // for forward compatibility.
 type VideoUserServer interface {
 	Login(context.Context, *LoginReq) (*LoginRes, error)
+	GetUserInfo(context.Context, *GetUserInfoReq) (*GetUserInfoRes, error)
 	mustEmbedUnimplementedVideoUserServer()
 }
 
@@ -64,6 +77,9 @@ type UnimplementedVideoUserServer struct{}
 
 func (UnimplementedVideoUserServer) Login(context.Context, *LoginReq) (*LoginRes, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
+}
+func (UnimplementedVideoUserServer) GetUserInfo(context.Context, *GetUserInfoReq) (*GetUserInfoRes, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserInfo not implemented")
 }
 func (UnimplementedVideoUserServer) mustEmbedUnimplementedVideoUserServer() {}
 func (UnimplementedVideoUserServer) testEmbeddedByValue()                   {}
@@ -104,6 +120,24 @@ func _VideoUser_Login_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
+func _VideoUser_GetUserInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUserInfoReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VideoUserServer).GetUserInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VideoUser_GetUserInfo_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VideoUserServer).GetUserInfo(ctx, req.(*GetUserInfoReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // VideoUser_ServiceDesc is the grpc.ServiceDesc for VideoUser service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -114,6 +148,10 @@ var VideoUser_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Login",
 			Handler:    _VideoUser_Login_Handler,
+		},
+		{
+			MethodName: "GetUserInfo",
+			Handler:    _VideoUser_GetUserInfo_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -36,5 +36,15 @@ func Login(ctx context.Context, req *pb.LoginReq) (*pb.LoginRes, error) {
 		return nil, err
 	}
 	return res.(*pb.LoginRes), nil
+}
 
+func GetUserInfo(ctx context.Context, req *pb.GetUserInfoReq) (*pb.GetUserInfoRes, error) {
+	res, err := VideoUserClient(ctx, func(c context.Context, client pb.VideoUserClient) (interface{}, error) {
+		res, err := client.GetUserInfo(ctx, req)
+		return res, err
+	})
+	if err != nil {
+		return nil, err
+	}
+	return res.(*pb.GetUserInfoRes), nil
 }

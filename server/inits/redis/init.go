@@ -13,7 +13,4 @@ func InitRedis() {
 
 	global.REDIS.Ping(global.Ctx)
 
-	global.REDIS.Set(global.Ctx, "a", 1, 60)
-	fmt.Println(global.REDIS.Get(global.Ctx, "a"))
-
 }
