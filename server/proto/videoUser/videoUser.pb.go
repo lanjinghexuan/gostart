@@ -21,6 +21,198 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type LikeVideoReq struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        int32                  `protobuf:"varint,1,opt,name=UserId,proto3" json:"UserId,omitempty"`
+	VideoId       int32                  `protobuf:"varint,2,opt,name=VideoId,proto3" json:"VideoId,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LikeVideoReq) Reset() {
+	*x = LikeVideoReq{}
+	mi := &file_videoUser_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LikeVideoReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LikeVideoReq) ProtoMessage() {}
+
+func (x *LikeVideoReq) ProtoReflect() protoreflect.Message {
+	mi := &file_videoUser_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LikeVideoReq.ProtoReflect.Descriptor instead.
+func (*LikeVideoReq) Descriptor() ([]byte, []int) {
+	return file_videoUser_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *LikeVideoReq) GetUserId() int32 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+func (x *LikeVideoReq) GetVideoId() int32 {
+	if x != nil {
+		return x.VideoId
+	}
+	return 0
+}
+
+type LikeVideoRes struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Success       bool                   `protobuf:"varint,1,opt,name=Success,proto3" json:"Success,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LikeVideoRes) Reset() {
+	*x = LikeVideoRes{}
+	mi := &file_videoUser_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LikeVideoRes) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LikeVideoRes) ProtoMessage() {}
+
+func (x *LikeVideoRes) ProtoReflect() protoreflect.Message {
+	mi := &file_videoUser_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LikeVideoRes.ProtoReflect.Descriptor instead.
+func (*LikeVideoRes) Descriptor() ([]byte, []int) {
+	return file_videoUser_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *LikeVideoRes) GetSuccess() bool {
+	if x != nil {
+		return x.Success
+	}
+	return false
+}
+
+type LikeReq struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        int32                  `protobuf:"varint,1,opt,name=UserId,proto3" json:"UserId,omitempty"`
+	LikeId        int32                  `protobuf:"varint,2,opt,name=LikeId,proto3" json:"LikeId,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LikeReq) Reset() {
+	*x = LikeReq{}
+	mi := &file_videoUser_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LikeReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LikeReq) ProtoMessage() {}
+
+func (x *LikeReq) ProtoReflect() protoreflect.Message {
+	mi := &file_videoUser_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LikeReq.ProtoReflect.Descriptor instead.
+func (*LikeReq) Descriptor() ([]byte, []int) {
+	return file_videoUser_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *LikeReq) GetUserId() int32 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+func (x *LikeReq) GetLikeId() int32 {
+	if x != nil {
+		return x.LikeId
+	}
+	return 0
+}
+
+type LikeRes struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Success       bool                   `protobuf:"varint,1,opt,name=Success,proto3" json:"Success,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LikeRes) Reset() {
+	*x = LikeRes{}
+	mi := &file_videoUser_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LikeRes) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LikeRes) ProtoMessage() {}
+
+func (x *LikeRes) ProtoReflect() protoreflect.Message {
+	mi := &file_videoUser_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LikeRes.ProtoReflect.Descriptor instead.
+func (*LikeRes) Descriptor() ([]byte, []int) {
+	return file_videoUser_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *LikeRes) GetSuccess() bool {
+	if x != nil {
+		return x.Success
+	}
+	return false
+}
+
 type LoginReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Mobile        int64                  `protobuf:"varint,1,opt,name=Mobile,proto3" json:"Mobile,omitempty"`
@@ -31,7 +223,7 @@ type LoginReq struct {
 
 func (x *LoginReq) Reset() {
 	*x = LoginReq{}
-	mi := &file_videoUser_proto_msgTypes[0]
+	mi := &file_videoUser_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -43,7 +235,7 @@ func (x *LoginReq) String() string {
 func (*LoginReq) ProtoMessage() {}
 
 func (x *LoginReq) ProtoReflect() protoreflect.Message {
-	mi := &file_videoUser_proto_msgTypes[0]
+	mi := &file_videoUser_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -56,7 +248,7 @@ func (x *LoginReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoginReq.ProtoReflect.Descriptor instead.
 func (*LoginReq) Descriptor() ([]byte, []int) {
-	return file_videoUser_proto_rawDescGZIP(), []int{0}
+	return file_videoUser_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *LoginReq) GetMobile() int64 {
@@ -82,7 +274,7 @@ type LoginRes struct {
 
 func (x *LoginRes) Reset() {
 	*x = LoginRes{}
-	mi := &file_videoUser_proto_msgTypes[1]
+	mi := &file_videoUser_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -94,7 +286,7 @@ func (x *LoginRes) String() string {
 func (*LoginRes) ProtoMessage() {}
 
 func (x *LoginRes) ProtoReflect() protoreflect.Message {
-	mi := &file_videoUser_proto_msgTypes[1]
+	mi := &file_videoUser_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -107,7 +299,7 @@ func (x *LoginRes) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoginRes.ProtoReflect.Descriptor instead.
 func (*LoginRes) Descriptor() ([]byte, []int) {
-	return file_videoUser_proto_rawDescGZIP(), []int{1}
+	return file_videoUser_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *LoginRes) GetId() int32 {
@@ -126,7 +318,7 @@ type GetUserInfoReq struct {
 
 func (x *GetUserInfoReq) Reset() {
 	*x = GetUserInfoReq{}
-	mi := &file_videoUser_proto_msgTypes[2]
+	mi := &file_videoUser_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -138,7 +330,7 @@ func (x *GetUserInfoReq) String() string {
 func (*GetUserInfoReq) ProtoMessage() {}
 
 func (x *GetUserInfoReq) ProtoReflect() protoreflect.Message {
-	mi := &file_videoUser_proto_msgTypes[2]
+	mi := &file_videoUser_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -151,7 +343,7 @@ func (x *GetUserInfoReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserInfoReq.ProtoReflect.Descriptor instead.
 func (*GetUserInfoReq) Descriptor() ([]byte, []int) {
-	return file_videoUser_proto_rawDescGZIP(), []int{2}
+	return file_videoUser_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetUserInfoReq) GetUserId() int32 {
@@ -169,13 +361,14 @@ type GetUserInfoRes struct {
 	Signature     string                 `protobuf:"bytes,4,opt,name=Signature,proto3" json:"Signature,omitempty"`
 	Constellation string                 `protobuf:"bytes,5,opt,name=Constellation,proto3" json:"Constellation,omitempty"`
 	IpAddress     string                 `protobuf:"bytes,6,opt,name=IpAddress,proto3" json:"IpAddress,omitempty"`
+	UserId        int32                  `protobuf:"varint,7,opt,name=UserId,proto3" json:"UserId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *GetUserInfoRes) Reset() {
 	*x = GetUserInfoRes{}
-	mi := &file_videoUser_proto_msgTypes[3]
+	mi := &file_videoUser_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -187,7 +380,7 @@ func (x *GetUserInfoRes) String() string {
 func (*GetUserInfoRes) ProtoMessage() {}
 
 func (x *GetUserInfoRes) ProtoReflect() protoreflect.Message {
-	mi := &file_videoUser_proto_msgTypes[3]
+	mi := &file_videoUser_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -200,7 +393,7 @@ func (x *GetUserInfoRes) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserInfoRes.ProtoReflect.Descriptor instead.
 func (*GetUserInfoRes) Descriptor() ([]byte, []int) {
-	return file_videoUser_proto_rawDescGZIP(), []int{3}
+	return file_videoUser_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetUserInfoRes) GetAvator() string {
@@ -245,28 +438,48 @@ func (x *GetUserInfoRes) GetIpAddress() string {
 	return ""
 }
 
+func (x *GetUserInfoRes) GetUserId() int32 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
 var File_videoUser_proto protoreflect.FileDescriptor
 
 const file_videoUser_proto_rawDesc = "" +
 	"\n" +
-	"\x0fvideoUser.proto\"6\n" +
+	"\x0fvideoUser.proto\"@\n" +
+	"\fLikeVideoReq\x12\x16\n" +
+	"\x06UserId\x18\x01 \x01(\x05R\x06UserId\x12\x18\n" +
+	"\aVideoId\x18\x02 \x01(\x05R\aVideoId\"(\n" +
+	"\fLikeVideoRes\x12\x18\n" +
+	"\aSuccess\x18\x01 \x01(\bR\aSuccess\"9\n" +
+	"\aLikeReq\x12\x16\n" +
+	"\x06UserId\x18\x01 \x01(\x05R\x06UserId\x12\x16\n" +
+	"\x06LikeId\x18\x02 \x01(\x05R\x06LikeId\"#\n" +
+	"\aLikeRes\x12\x18\n" +
+	"\aSuccess\x18\x01 \x01(\bR\aSuccess\"6\n" +
 	"\bLoginReq\x12\x16\n" +
 	"\x06Mobile\x18\x01 \x01(\x03R\x06Mobile\x12\x12\n" +
 	"\x04Code\x18\x02 \x01(\x05R\x04Code\"\x1a\n" +
 	"\bLoginRes\x12\x0e\n" +
 	"\x02Id\x18\x01 \x01(\x05R\x02Id\"(\n" +
 	"\x0eGetUserInfoReq\x12\x16\n" +
-	"\x06UserId\x18\x01 \x01(\x05R\x06UserId\"\xb6\x01\n" +
+	"\x06UserId\x18\x01 \x01(\x05R\x06UserId\"\xce\x01\n" +
 	"\x0eGetUserInfoRes\x12\x16\n" +
 	"\x06Avator\x18\x01 \x01(\tR\x06Avator\x12\x1a\n" +
 	"\bNickName\x18\x02 \x01(\tR\bNickName\x12\x0e\n" +
 	"\x02Id\x18\x03 \x01(\x05R\x02Id\x12\x1c\n" +
 	"\tSignature\x18\x04 \x01(\tR\tSignature\x12$\n" +
 	"\rConstellation\x18\x05 \x01(\tR\rConstellation\x12\x1c\n" +
-	"\tIpAddress\x18\x06 \x01(\tR\tIpAddress2[\n" +
+	"\tIpAddress\x18\x06 \x01(\tR\tIpAddress\x12\x16\n" +
+	"\x06UserId\x18\a \x01(\x05R\x06UserId2\xa2\x01\n" +
 	"\tVideoUser\x12\x1d\n" +
 	"\x05Login\x12\t.LoginReq\x1a\t.LoginRes\x12/\n" +
-	"\vGetUserInfo\x12\x0f.GetUserInfoReq\x1a\x0f.GetUserInfoResB\x03Z\x01.b\x06proto3"
+	"\vGetUserInfo\x12\x0f.GetUserInfoReq\x1a\x0f.GetUserInfoRes\x12\x1a\n" +
+	"\x04Like\x12\b.LikeReq\x1a\b.LikeRes\x12)\n" +
+	"\tLikeVideo\x12\r.LikeVideoReq\x1a\r.LikeVideoResB\x03Z\x01.b\x06proto3"
 
 var (
 	file_videoUser_proto_rawDescOnce sync.Once
@@ -280,20 +493,28 @@ func file_videoUser_proto_rawDescGZIP() []byte {
 	return file_videoUser_proto_rawDescData
 }
 
-var file_videoUser_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_videoUser_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_videoUser_proto_goTypes = []any{
-	(*LoginReq)(nil),       // 0: LoginReq
-	(*LoginRes)(nil),       // 1: LoginRes
-	(*GetUserInfoReq)(nil), // 2: GetUserInfoReq
-	(*GetUserInfoRes)(nil), // 3: GetUserInfoRes
+	(*LikeVideoReq)(nil),   // 0: LikeVideoReq
+	(*LikeVideoRes)(nil),   // 1: LikeVideoRes
+	(*LikeReq)(nil),        // 2: LikeReq
+	(*LikeRes)(nil),        // 3: LikeRes
+	(*LoginReq)(nil),       // 4: LoginReq
+	(*LoginRes)(nil),       // 5: LoginRes
+	(*GetUserInfoReq)(nil), // 6: GetUserInfoReq
+	(*GetUserInfoRes)(nil), // 7: GetUserInfoRes
 }
 var file_videoUser_proto_depIdxs = []int32{
-	0, // 0: VideoUser.Login:input_type -> LoginReq
-	2, // 1: VideoUser.GetUserInfo:input_type -> GetUserInfoReq
-	1, // 2: VideoUser.Login:output_type -> LoginRes
-	3, // 3: VideoUser.GetUserInfo:output_type -> GetUserInfoRes
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
+	4, // 0: VideoUser.Login:input_type -> LoginReq
+	6, // 1: VideoUser.GetUserInfo:input_type -> GetUserInfoReq
+	2, // 2: VideoUser.Like:input_type -> LikeReq
+	0, // 3: VideoUser.LikeVideo:input_type -> LikeVideoReq
+	5, // 4: VideoUser.Login:output_type -> LoginRes
+	7, // 5: VideoUser.GetUserInfo:output_type -> GetUserInfoRes
+	3, // 6: VideoUser.Like:output_type -> LikeRes
+	1, // 7: VideoUser.LikeVideo:output_type -> LikeVideoRes
+	4, // [4:8] is the sub-list for method output_type
+	0, // [0:4] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -310,7 +531,7 @@ func file_videoUser_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_videoUser_proto_rawDesc), len(file_videoUser_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

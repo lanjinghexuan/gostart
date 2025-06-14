@@ -5,6 +5,27 @@ option go_package = ".";
 service VideoUser {
   rpc Login (LoginReq) returns (LoginRes);
   rpc GetUserInfo (GetUserInfoReq) returns (GetUserInfoRes);
+  rpc Like(LikeReq) returns (LikeRes);
+  rpc LikeVideo(LikeVideoReq) returns (LikeVideoRes);
+}
+
+message LikeVideoReq{
+  int32 UserId = 1;
+  int32 VideoId = 2;
+}
+
+message LikeVideoRes{
+  bool Success = 1;
+}
+
+
+message LikeReq{
+  int32 UserId = 1;
+  int32 LikeId = 2;
+}
+
+message LikeRes{
+  bool Success = 1;
 }
 
 message LoginReq{
@@ -27,4 +48,5 @@ message GetUserInfoRes{
     string Signature = 4;
     string Constellation = 5;
     string IpAddress = 6;
+    int32 UserId = 7;
 }

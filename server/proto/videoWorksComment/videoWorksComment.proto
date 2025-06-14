@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+
+option go_package = ".;videoWorksComment";
+
+service VideoWorksComment{
+  rpc GetComment(GetCommentReq) returns(GetCommentRes);
+  rpc GetCommentReplyList(GetCommentReplyListReq) returns(GetCommentReplyListRes);
+}
+
+message GetCommentReplyListReq{
+  int32 page = 3;
+  int32 limit = 10;
+  int32 pid = 1;
+}
+
+message GetCommentReplyListRes{
+  repeated CommentP data = 1;
+}
+
+message GetCommentReq{
+  int32 WorkId = 1;
+  int32 page = 3;
+  int32 limit = 10;
+}
+
+message GetCommentRes{
+  repeated Comment data  = 1;
+}
+
+message Comment{
+  string UserName = 1;
+  int32 UserId = 2;
+  string Content = 3;
+  string Avator = 4;
+  string Time = 7;
+  int32 Id = 9;
+  repeated CommentP data = 8;
+  bool HasMore = 10;
+}
+
+message CommentP{
+  string UserName = 1;
+  int32 UserId = 2;
+  string Content = 3;
+  string Avator = 4;
+  int32 PUserId = 5;
+  string PUserName = 6;
+  string Time = 7;
+}

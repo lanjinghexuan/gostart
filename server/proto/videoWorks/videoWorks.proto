@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+
+option go_package = ".;videoWorks";
+
+service VideoWorks{
+  rpc GetVideoWorks(GetVideoWorksReq) returns (GetVideoWorksRes);
+  rpc FindVideoWorks(FindVideoWorksReq) returns (FindVideoWorksRes);
+  rpc AddVideoWorks(AddVideoWorksReq) returns (AddVideoWorksRes);
+}
+
+message AddVideoWorksReq{
+  int32 UserId = 1;
+  string Title = 2;
+  string Desc = 3;
+  int32 MusicId = 4;
+  string WorkType = 5;
+//  string CheckStatus = 6;
+//  int32 CheckUser = 7;
+  string Ip = 8;
+  string  FilePath = 9;
+}
+
+
+message AddVideoWorksRes{
+  bool Succ = 1;
+}
+
+
+message FindVideoWorksReq{
+  int32 WorkId = 1;
+}
+
+message FindVideoWorksRes{
+  string Title = 1;
+  string Desc = 2;
+  int32  MusicId= 3;
+  string MusicName = 4;
+  string MusicPath = 5;
+  string work_type = 6;
+  int32 like_count = 7;
+  int32 comment_count = 8;
+  int32 share_count = 9;
+  int32 collect_count= 10;
+  int32 browse_count = 11;
+  string Path = 12;
+}
+
+
+message GetVideoWorksReq{
+  int32 Page = 1;
+}
+
+message GetVideoWorksRes{
+  repeated  VideoWorksData data = 1;
+}
+
+message VideoWorksData{
+  int32  Id = 1;
+  string Title = 2;
+  string Desc = 3;
+  string Music = 4;
+  string MusicName = 5;
+  int32 UserId = 6;
+  string UserName = 7;
+  int32 LikeCount = 8;
+  int32 CommentCount = 9;
+  string ObjectPath = 10;
+  int32 MusicId = 11;
+}
+

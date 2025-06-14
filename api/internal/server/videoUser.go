@@ -48,3 +48,25 @@ func GetUserInfo(ctx context.Context, req *pb.GetUserInfoReq) (*pb.GetUserInfoRe
 	}
 	return res.(*pb.GetUserInfoRes), nil
 }
+
+func Like(ctx context.Context, req *pb.LikeReq) (*pb.LikeRes, error) {
+	res, err := VideoUserClient(ctx, func(c context.Context, client pb.VideoUserClient) (interface{}, error) {
+		res, err := client.Like(ctx, req)
+		return res, err
+	})
+	if err != nil {
+		return nil, err
+	}
+	return res.(*pb.LikeRes), nil
+}
+
+func LikeVideo(ctx context.Context, req *pb.LikeVideoReq) (*pb.LikeVideoRes, error) {
+	res, err := VideoUserClient(ctx, func(c context.Context, client pb.VideoUserClient) (interface{}, error) {
+		res, err := client.LikeVideo(ctx, req)
+		return res, err
+	})
+	if err != nil {
+		return nil, err
+	}
+	return res.(*pb.LikeVideoRes), nil
+}

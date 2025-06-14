@@ -2,6 +2,7 @@ package init
 
 import (
 	"fmt"
+
 	"github.com/spf13/viper"
 	"server/global"
 	"server/inits/mysql"

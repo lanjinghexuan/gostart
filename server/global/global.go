@@ -3,6 +3,7 @@ package global
 import (
 	"context"
 	"github.com/go-redis/redis/v8"
+	"github.com/minio/minio-go/v7"
 	"gorm.io/gorm"
 	"server/inits/config"
 )
@@ -12,4 +13,5 @@ var (
 	DB     *gorm.DB
 	REDIS  *redis.Client
 	Ctx    = context.Background()
+	MinIO  *minio.Client
 )

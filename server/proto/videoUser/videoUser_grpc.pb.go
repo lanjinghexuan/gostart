@@ -21,6 +21,8 @@ const _ = grpc.SupportPackageIsVersion9
 const (
 	VideoUser_Login_FullMethodName       = "/VideoUser/Login"
 	VideoUser_GetUserInfo_FullMethodName = "/VideoUser/GetUserInfo"
+	VideoUser_Like_FullMethodName        = "/VideoUser/Like"
+	VideoUser_LikeVideo_FullMethodName   = "/VideoUser/LikeVideo"
 )
 
 // VideoUserClient is the client API for VideoUser service.
@@ -29,6 +31,8 @@ const (
 type VideoUserClient interface {
 	Login(ctx context.Context, in *LoginReq, opts ...grpc.CallOption) (*LoginRes, error)
 	GetUserInfo(ctx context.Context, in *GetUserInfoReq, opts ...grpc.CallOption) (*GetUserInfoRes, error)
+	Like(ctx context.Context, in *LikeReq, opts ...grpc.CallOption) (*LikeRes, error)
+	LikeVideo(ctx context.Context, in *LikeVideoReq, opts ...grpc.CallOption) (*LikeVideoRes, error)
 }
 
 type videoUserClient struct {
@@ -59,12 +63,34 @@ func (c *videoUserClient) GetUserInfo(ctx context.Context, in *GetUserInfoReq, o
 	return out, nil
 }
 
+func (c *videoUserClient) Like(ctx context.Context, in *LikeReq, opts ...grpc.CallOption) (*LikeRes, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(LikeRes)
+	err := c.cc.Invoke(ctx, VideoUser_Like_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *videoUserClient) LikeVideo(ctx context.Context, in *LikeVideoReq, opts ...grpc.CallOption) (*LikeVideoRes, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(LikeVideoRes)
+	err := c.cc.Invoke(ctx, VideoUser_LikeVideo_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VideoUserServer is the server API for VideoUser service.
 // All implementations must embed UnimplementedVideoUserServer
 // for forward compatibility.
 type VideoUserServer interface {
 	Login(context.Context, *LoginReq) (*LoginRes, error)
 	GetUserInfo(context.Context, *GetUserInfoReq) (*GetUserInfoRes, error)
+	Like(context.Context, *LikeReq) (*LikeRes, error)
+	LikeVideo(context.Context, *LikeVideoReq) (*LikeVideoRes, error)
 	mustEmbedUnimplementedVideoUserServer()
 }
 
@@ -80,6 +106,12 @@ func (UnimplementedVideoUserServer) Login(context.Context, *LoginReq) (*LoginRes
 }
 func (UnimplementedVideoUserServer) GetUserInfo(context.Context, *GetUserInfoReq) (*GetUserInfoRes, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserInfo not implemented")
+}
+func (UnimplementedVideoUserServer) Like(context.Context, *LikeReq) (*LikeRes, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Like not implemented")
+}
+func (UnimplementedVideoUserServer) LikeVideo(context.Context, *LikeVideoReq) (*LikeVideoRes, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method LikeVideo not implemented")
 }
 func (UnimplementedVideoUserServer) mustEmbedUnimplementedVideoUserServer() {}
 func (UnimplementedVideoUserServer) testEmbeddedByValue()                   {}
@@ -138,6 +170,42 @@ func _VideoUser_GetUserInfo_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _VideoUser_Like_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LikeReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VideoUserServer).Like(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VideoUser_Like_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VideoUserServer).Like(ctx, req.(*LikeReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VideoUser_LikeVideo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LikeVideoReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VideoUserServer).LikeVideo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VideoUser_LikeVideo_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VideoUserServer).LikeVideo(ctx, req.(*LikeVideoReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // VideoUser_ServiceDesc is the grpc.ServiceDesc for VideoUser service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -152,6 +220,14 @@ var VideoUser_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetUserInfo",
 			Handler:    _VideoUser_GetUserInfo_Handler,
+		},
+		{
+			MethodName: "Like",
+			Handler:    _VideoUser_Like_Handler,
+		},
+		{
+			MethodName: "LikeVideo",
+			Handler:    _VideoUser_LikeVideo_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

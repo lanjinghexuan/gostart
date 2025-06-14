@@ -66,6 +66,7 @@ func GetUserInfo(c *gin.Context) {
 		//UserId: req.UserId,
 		UserId: userId.(int32),
 	})
+
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
@@ -73,6 +74,103 @@ func GetUserInfo(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"data": data,
 		"code": 200,
+	})
+	return
+}
+
+type LikeReq struct {
+	LikeId int32 `json:"like_id" form:"like_id"`
+}
+
+func Like(c *gin.Context) {
+	var req LikeReq
+	err := c.ShouldBindQuery(&req)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"code": http.StatusInternalServerError,
+			"msg":  err.Error(),
+		})
+	}
+
+	res, err := server.Like(c, &pb.LikeReq{
+		UserId: c.MustGet("userId").(int32),
+		LikeId: req.LikeId,
+	})
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"code": http.StatusInternalServerError,
+			"msg":  err.Error(),
+		})
+		return
+	}
+	if res == nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"code": 801,
+			"msg":  "系统出错",
+		})
+		return
+	}
+
+	if res.Success {
+		c.JSON(http.StatusOK, gin.H{
+			"code": 200,
+			"msg":  "点赞成功",
+		})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"code": 200,
+		"data": "取消点赞成功",
+	})
+	return
+}
+
+type LikeVideoReq struct {
+	VideoId int32 `json:"video_id" form:"video_id" binding:"required"`
+}
+
+// 用户点赞视频 重复点击会导致点赞取消
+func LikeVideo(c *gin.Context) {
+	//获取用户点赞的视频id
+	var req LikeVideoReq
+	err := c.ShouldBindQuery(&req)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"code": http.StatusInternalServerError,
+			"msg":  err.Error(),
+		})
+		return
+	}
+	//请求服务端 userid从中间件获取
+	res, err := server.LikeVideo(c, &pb.LikeVideoReq{
+		UserId:  c.MustGet("userId").(int32),
+		VideoId: req.VideoId,
+	})
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"code": http.StatusInternalServerError,
+			"msg":  err.Error(),
+		})
+		return
+	}
+	if res == nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"code": 801,
+			"msg":  "系统出错",
+		})
+		return
+	}
+
+	if res.Success {
+		c.JSON(http.StatusOK, gin.H{
+			"code": 200,
+			"msg":  "点赞成功",
+		})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"code": 200,
+		"data": "取消点赞成功",
 	})
 	return
 }
